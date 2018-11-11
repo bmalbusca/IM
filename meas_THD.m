@@ -1,6 +1,4 @@
-function [THD]= meas_THD(sk,t,famostragem,Npontos)
-
-[~,spectrum,~] = meas_freq(sk,t,famostragem,Npontos);
+function [THD]= meas_THD(sk,t,famostragem,Npontos,spectrum)
 
 [harmonica,index]= max(spectrum);
 
@@ -13,7 +11,7 @@ while i< Npontos/2
     sum = sum + spectrum(i)^2;
     i=i+1;
 end
-
+p_ruido = (abs(sum))^2
 THD = sqrt(sum)/harmonica;
 
 

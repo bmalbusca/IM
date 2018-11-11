@@ -1,4 +1,4 @@
-function [freqs ,spectrum ,freq_pesada]= meas_freq( S, t,fs,n)
+function [freqs ,spectrum ,freq_pesada,deltaf]= meas_freq( S, t,fs,n)
 %UNTITLED Summary of this function goes here
 %   Detailed explanation goes here
 
