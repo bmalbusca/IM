@@ -1,4 +1,4 @@
-function [] = DAQ_parte1a( device,type , channel, fs, n, range)
+function [] = DAQ_parte1b( device,type , channel, fs, n, range)
 
 [ S, t ] = acquire( device,type , channel, fs, nscans, range);
 
@@ -14,4 +14,28 @@ print('Valor eficaz: ',s_rms)
 print('Frequência: ',freq_pesada)
 print('Resolução Temporal: ',deltatempo)
 print('Resolução Espectral: ',deltaf)
+
+
+if n > ceil((f/fs)*5)
+    x = S(1:ceil((f/fs)*5));
+    y = t(1:ceil((f/fs)*5));
+else
+    x=S;
+    y=t;
+end
+
+figure;
+%figura 1
+subplot(2,1,1);
+plot(x,y);
+title(['frequencia=',num2str(freqs),'Hz Valor médio=',num2str(s_mean),'V Valor eficaz=',...
+    num2str(s_rms),' Nº amostras=',num2str(n),' fª amostragem=',num2str(fs),...
+    'Hz low range=',num2str(-range),'V high range=',num2str(range),'V']);
+xlabel('Tempo (s)');
+ylabel('A [V]');
+%figura 2
+subplot(2,1,2);
+semilogy(freqs,spectrum);
+xlabel('f [Hz]');
+ylabel('A [V]');
 end
