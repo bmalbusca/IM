@@ -1,0 +1,1 @@
+function [] = DAQ_parte2( device,type , channel, fs, n, range)

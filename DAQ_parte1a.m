@@ -1,4 +1,4 @@
-function [] = DAQ_parte1b( device,type , channel, fs, n, range)
+function [] = DAQ_parte1a( device,type , channel, fs, n, range)
 
 [ S, t ] = acquire( device,type , channel, fs, nscans, range);
 
@@ -9,11 +9,11 @@ function [] = DAQ_parte1b( device,type , channel, fs, n, range)
 deltatempo=(1/deltaf)*n;
 
 print('Alcance: ',range)
-print('Valor médio: ',s_mean)
+print('Valor m?dio: ',s_mean)
 print('Valor eficaz: ',s_rms)
-print('Frequência: ',freq_pesada)
-print('Resolução Temporal: ',deltatempo)
-print('Resolução Espectral: ',deltaf)
+print('Frequ?ncia: ',freq_pesada)
+print('Resolu??o Temporal: ',deltatempo)
+print('Resolu??o Espectral: ',deltaf)
 
 
 if n > ceil((f/fs)*5)
@@ -28,8 +28,8 @@ figure;
 %figura 1
 subplot(2,1,1);
 plot(x,y);
-title(['frequencia=',num2str(freqs),'Hz Valor médio=',num2str(s_mean),'V Valor eficaz=',...
-    num2str(s_rms),' Nº amostras=',num2str(n),' fª amostragem=',num2str(fs),...
+title(['frequencia=',num2str(freqs),'Hz Valor m?dio=',num2str(s_mean),'V Valor eficaz=',...
+    num2str(s_rms),' N? amostras=',num2str(n),' f? amostragem=',num2str(fs),...
     'Hz low range=',num2str(-range),'V high range=',num2str(range),'V']);
 xlabel('Tempo (s)');
 ylabel('A [V]');

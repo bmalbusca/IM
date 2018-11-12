@@ -12,3 +12,4 @@ sk1=cos(2*pi*freq*t +pi/2);
 meanf(sk,t,famostragem,Npontos,freq_estim);
 THD = meas_THD(sk,t,famostragem,Npontos,spectrum);
 delay = phase( sk1, sk)
+harmonics(spectrum,freq_estim,famostragem,Npontos);

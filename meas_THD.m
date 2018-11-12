@@ -1,4 +1,4 @@
-function [THD]= meas_THD(sk,t,famostragem,Npontos,spectrum)
+function [THD]= meas_THD(Npontos,spectrum)
 
 [harmonica,index]= max(spectrum);
 
