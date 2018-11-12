@@ -23,7 +23,7 @@ n_avg = np_inteiros * npontos;
 i = 1;
 sum1 = 0;
 sum2 = 0;
-while (i < n_avg) 
+while ((i < n_avg) & (size(Sk)) ) 
 
     sum1 = sum1 + (Sk(i));
     sum2 = sum2 + (Sk(i))^2;

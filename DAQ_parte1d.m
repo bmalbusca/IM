@@ -1,6 +1,6 @@
 function [] = DAQ_parte1d( device,type , channel, fs, n, range)
 
-[ S, t ] = acquire( device,type , channel, fs, nscans, range);
+[ S, t ] = acquire( device,type , channel, fs, n, range);
 
 [ freqs, spectrum, freq_pesada, deltaf]= meas_freq( S, t, fs, n);
 
