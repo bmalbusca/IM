@@ -1,4 +1,4 @@
-function [] = DAQ_parte2( device,type , channel, fs, n, range)
+function [] = DAQ_parte2( device,type , channel1, channel2, fs, n, range)
 
  [ S, t ] = acquire2( device,type , channel1,channel2, fsampl, n, range);
  
