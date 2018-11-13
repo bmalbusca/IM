@@ -1,3 +1,9 @@
+
+% Autores: Bruno Figueiredo
+%          Tarcisio Silva
+%
+% Turno: Terca-feira 17h
+%
 function [ espetro_potencia, Fk_potencia ] = espetro_potencia( espetro,Fk )
 %   calcula espetro potencia atraves do espetro do sinal
 N = length (espetro);

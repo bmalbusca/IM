@@ -1,3 +1,8 @@
+% Autores: Bruno Figueiredo
+%          Tarcisio Silva
+%
+% Turno: Terca-feira 17h
+%
 function [ S, t ] = acquire( device,voltage , channel, fsampl, nscans, range)
 % Funcao que adquire 1 sinal - usada nas funcoes DAQ_parte1
 %   

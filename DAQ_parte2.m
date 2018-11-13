@@ -1,3 +1,8 @@
+% Autores: Bruno Figueiredo
+%          Tarcisio Silva
+%
+% Turno: Terca-feira 17h
+%
 function [] = DAQ_parte2( device,type , channel1, channel2, fs, n, range)
 
 %Adquire 2 sinais em simultaneo

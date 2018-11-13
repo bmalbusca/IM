@@ -1,3 +1,8 @@
+% Autores: Bruno Figueiredo
+%          Tarcisio Silva
+%
+% Turno: Terca-feira 17h
+%
 function [ delay ] = phase( x, y)
 %  calculo da diferenca de fase
 

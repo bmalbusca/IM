@@ -1,3 +1,8 @@
+% Autores: Bruno Figueiredo
+%          Tarcisio Silva
+%
+% Turno: Terca-feira 17h
+%
 function ENOB = calc_ENOB(spectrum)
     %Numero de bits efectivos utilizados para medir as amostras
 

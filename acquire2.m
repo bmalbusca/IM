@@ -1,3 +1,9 @@
+% Autores: Bruno Figueiredo
+%          Tarcisio Silva
+%
+% Turno: Terca-feira 17h
+%
+
 function [ S, t ] = acquire2( device,type , channel1,channel2, fsampl, nscans, range)
 % Funcao que adquire 2 sinais - usada nas funcoes DAQ_parte2
 % 

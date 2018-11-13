@@ -1,3 +1,8 @@
+% Autores: Bruno Figueiredo
+%          Tarcisio Silva
+%
+% Turno: Terca-feira 17h
+%
 function [THD]= meas_THD(Npontos,spectrum)
 %Calculo da THD de um sinal
 

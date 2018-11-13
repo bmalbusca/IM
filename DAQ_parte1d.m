@@ -1,3 +1,9 @@
+% Autores: Bruno Figueiredo
+%          Tarcisio Silva
+%
+% Turno: Terca-feira 17h
+%
+
 function [] = DAQ_parte1d( device,type , channel, fs, n, range)
 %adquire o sinal 
 [ S, t ] = acquire( device,type , channel, fs, n, range);

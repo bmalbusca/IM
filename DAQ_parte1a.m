@@ -1,3 +1,9 @@
+% Autores: Bruno Figueiredo
+%          Tarcisio Silva
+%
+% Turno: Terca-feira 17h
+%
+
 function [] = DAQ_parte1a( device,type , channel, fs, n, range)
 
 %adquire o sinal 

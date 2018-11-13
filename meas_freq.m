@@ -1,3 +1,8 @@
+% Autores: Bruno Figueiredo
+%          Tarcisio Silva
+%
+% Turno: Terca-feira 17h
+%
 function [freqs ,spectrum ,freq_pesada,deltaf]= meas_freq( S, t,fs,n)
 %Calcula o a frequencia do sinal atraves de da media pesada
 

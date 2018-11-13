@@ -1,3 +1,9 @@
+% Autores: Bruno Figueiredo
+%          Tarcisio Silva
+%
+% Turno: Terca-feira 17h
+%
+
 function PhDiff = phdiffmeasure(x, y)
 
 %coloca com um vector coluna se necessario

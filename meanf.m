@@ -1,3 +1,9 @@
+% Autores: Bruno Figueiredo
+%          Tarcisio Silva
+%
+% Turno: Terca-feira 17h
+%
+
 function [ s_mean ,s_alt, s_rms ] = meanf( Sk, t,fs, n, f_estim )
 
 % Calculo de valor do medio 
