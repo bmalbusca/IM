@@ -4,10 +4,10 @@
 % Turno: Terca-feira 17h
 %
 
-function [] = DAQ_parte1a( device,type , channel, fs, n, range)
+function  DAQ_parte1a( device, channel, fs, n, range)
 
 %adquire o sinal 
-[ S, t ] = acquire( device,type , channel, fs, n, range);
+[ S, t ] = acquire( device, channel, fs, n, range);
 
 %calcula a frequencia e faz a DFT do sinal 
 [ freqs, spectrum, freq_pesada, deltaf]= meas_freq( S, t, fs, n);
@@ -15,14 +15,10 @@ function [] = DAQ_parte1a( device,type , channel, fs, n, range)
 %Calcula o valor do medio e rms
 [ s_mean ,s_alt, s_rms ] = meanf( S, t ,fs, n, freq_pesada);
 
-deltatempo=(1/deltaf)*n;
+deltatempo=(1/deltaf)*n
 
-print('Alcance: ',range)
-print('Valor m?dio: ',s_alt)
-print('Valor eficaz: ',s_rms)
-print('Frequ?ncia: ',freq_pesada)
-print('Resolu??o Temporal: ',deltatempo)
-print('Resolu??o Espectral: ',deltaf)
+thd =meas_THD(n,spectrum);
+thd_db = db2mag(thd);
 
 %Usa 5 periodos para fazer fazer o grafico
 if n > ceil((f/fs)*5)
@@ -37,7 +33,7 @@ figure;
 %figura 1
 subplot(2,1,1);
 plot(x,y);
-title(['frequencia=',num2str(freqs),'Hz Valor m?dio=',num2str(s_mean),'V Valor eficaz=',...
+title(['frequencia=',num2str(freq_pesada),'Hz Valor m?dio=',num2str(s_alt),'V Valor eficaz=',...
     num2str(s_rms),' N? amostras=',num2str(n),' f? amostragem=',num2str(fs),...
     'Hz low range=',num2str(-range),'V high range=',num2str(range),'V']);
 xlabel('Tempo (s)');

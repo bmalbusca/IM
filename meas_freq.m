@@ -11,7 +11,7 @@ freqs = fs*round((0:(n/2)-1))/n;
 ff = abs(fft(S)) / n;
 %espectro DFT
 spectrum = ff(1:n / 2) * 2;
-
+spectrum(1)=0;
 figure();
 plot(freqs',spectrum)
 title('FFT single-sided spectrum')
@@ -19,14 +19,14 @@ xlabel('f [Hz]')
 
 %Espectro de potencia
 [ p_spectrum, p_freqs] = espetro_potencia( spectrum,freqs );
-
+p_spectrum(1)=0;
 figure();
 plot(p_freqs',p_spectrum)
 title('single-sided power spectrum')
 xlabel('f [Hz]')    
 
 %metodo da media pesada
-deltaf = fs/n;
+deltaf = fs/n
 [~,index]= max(p_spectrum);
 mfreq = deltaf * index
 

@@ -20,17 +20,17 @@ end
 s_mean = sum/n %resultado em condicoes normais
 s_rms2 = sqrt(sum3/n) %resultado se houver espalhamento
 
-npontos = ceil(fs/f_estim) ;
+npontos = floor(fs/f_estim) ;
 nperiodos = n / npontos;
-np_inteiros = round(nperiodos);
-n_avg = np_inteiros * npontos;
+np_inteiros = floor(nperiodos);
+n_avg = np_inteiros * npontos
 
 
 i = 1;
 sum1 = 0;
 sum2 = 0;
 %
-while ((i < n_avg) & (size(Sk)) ) 
+while ((i <= n_avg) & i<=(size(Sk)) ) 
 
     sum1 = sum1 + (Sk(i));
     sum2 = sum2 + (Sk(i))^2;
