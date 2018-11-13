@@ -9,11 +9,11 @@ function [] = DAQ_parte2( device,type , channel1, channel2, fs, n, range)
 [ S, t ] = acquire2( device,type , channel1,channel2, fsampl, n, range);
 
 %Estima as frequencias 
-[ ~ ,~, s_rms1 ] = meanf( S(1,:), t,fs, n, f_estim );
 [ ~ ,~, s_rms2 ] = meanf( S(2,:), t,fs, n, f_estim );
+[ ~ ,~, s_rms1 ] = meanf( (S(1,:)-S(2,:)), t,fs, n, f_estim );
  
 %calcula o modulo da impedancia
-Z = (s_rms2/(s_rms1-s_rms2))*100;  %impedacia conhecida de 100 ohm
+Z = (s_rms2/(s_rms1))*100;  %impedacia conhecida de 100 ohm
 %calcula o angulo da impedancia
 angle = phase((S(1,:)- S(2,:)), S(2,:)); 
 disp('modulo da impedancia')
