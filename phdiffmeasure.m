@@ -1,28 +1,27 @@
 function PhDiff = phdiffmeasure(x, y)
-% function: PhDiff = phdiffmeasure(x, y)
-% x - first signal in the time domain
-% y - second signal in the time domain
-% PhDiff - phase difference Y -> X, rad
-% represent x as column-vector if it is not
+
+%coloca com um vector coluna se necessario
 if size(x, 2) > 1
     x = x';
 end
-% represent y as column-vector if it is not
 if size(y, 2) > 1
     y = y';
 end
-% remove the DC component
+
+
+% remove o componente DC 
 x = x - mean(x);
 y = y - mean(y);
-% signals length
-N = length(x);
-% window preparation
 
-% fft of the first signal
+% comprimento do sinal
+N = length(x);
+
+
+% fft do primeiro sinal
 X = fft(x);
-% fft of the second signal
+% fft do segundo sinal
 Y = fft(y);
-% phase difference calculation
+%difernca de fases
 [~, indx] = max(abs(X));
 [~, indy] = max(abs(Y));
 PhDiff = angle(Y(indy)) - angle(X(indx));

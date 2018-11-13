@@ -1,6 +1,6 @@
 function [ S, t ] = acquire2( device,type , channel1,channel2, fsampl, nscans, range)
-%UNTITLED Summary of this function goes here
-%   Detailed explanation goes here
+% Funcao que adquire 2 sinais - usada nas funcoes DAQ_parte2
+% 
 
 s = daq.createSession('ni') %Will run for 1 second (1000 scans) at 1000 scans/second 
 s.Rate = fsampl;    %Now, will run fsampl/second or fsampl [Hz]

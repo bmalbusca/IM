@@ -1,19 +1,19 @@
 function [] = DAQ_parte1d( device,type , channel, fs, n, range)
-
+%adquire o sinal 
 [ S, t ] = acquire( device,type , channel, fs, n, range);
-
+%calcula a frequencia do sinal e faz o espectro
 [ freqs, spectrum, freq_pesada, deltaf]= meas_freq( S, t, fs, n);
-
+%calculo do valor medio e valor rms
 [ s_mean ,s_alt, s_rms ] = meanf( S, t ,fs, n, freq_pesada);
 
+%calculo da espectro de potencia
+[ p_spectrum, Fk_potencia ] = espetro_potencia( spectrum, freqs );
 
-[ espetro_potencia, Fk_potencia ] = espetro_potencia( spectrum, freqs );
-
-ENOB = calc_ENOB(espetro_potencia);
-plot(Fk_potencia ,espetro_potencia);
+ENOB = calc_ENOB(spectrum);
+plot(Fk_potencia ,p_spectrum);
 
 print('Alcance: ',range)
-print('Valor m?dio: ',s_mean)
+print('Valor m?dio: ',s_alt)
 print('Valor eficaz: ',s_rms)
 print('Frequ?ncia: ',freq_pesada)
 print('ENOB: ',ENOB)

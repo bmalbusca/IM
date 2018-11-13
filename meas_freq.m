@@ -1,10 +1,10 @@
 function [freqs ,spectrum ,freq_pesada,deltaf]= meas_freq( S, t,fs,n)
-%UNTITLED Summary of this function goes here
-%   Detailed explanation goes here
+%Calcula o a frequencia do sinal atraves de da media pesada
 
+%frequencias da ftt sem replicas
 freqs = fs*round((0:(n/2)-1))/n;
 ff = abs(fft(S)) / n;
-% All the values shall be duplicated, except the first and last values.
+%espectro DFT
 spectrum = ff(1:n / 2) * 2;
 
 figure();
@@ -12,6 +12,7 @@ plot(freqs',spectrum)
 title('FFT single-sided spectrum')
 xlabel('f [Hz]') 
 
+%Espectro de potencia
 [ p_spectrum, p_freqs] = espetro_potencia( spectrum,freqs );
 
 figure();
@@ -19,7 +20,7 @@ plot(p_freqs',p_spectrum)
 title('single-sided power spectrum')
 xlabel('f [Hz]')    
 
-
+%metodo da media pesada
 deltaf = fs/n;
 [~,index]= max(p_spectrum);
 mfreq = deltaf * index
